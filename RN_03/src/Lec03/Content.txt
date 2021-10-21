@@ -1,0 +1,5 @@
+Nội dung:
+    1. Bindding Data
+    2. Xử lý render if-else vòng lặp
+    3. Xử lý sự kiện trong react-native
+    4. Re-render với state.
