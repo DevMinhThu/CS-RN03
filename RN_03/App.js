@@ -7,10 +7,15 @@ import React from 'react';
 // import BindingData from './src/Lec03/BindingData';
 // import ExerciseUI from './src/Lec03/ExerciseUI';
 // import RenderList from './src/Lec03/RenderList';
-import BTLec06 from './src/Lec03/RN03_BTBuoi6_Binding_VuMinhThu';
+// import BTLec06 from './src/Lec03/RN03_BTBuoi6_Binding_VuMinhThu';
+// import ExRender from './src/Lec04/ExRender';
+// import DemoScrollView from './src/Lec04/DemoScrollView';
+// import DemoFlatList from './src/Lec04/DemoFlatList';
+// import DemoSectionList from './src/Lec04/DemoSectionList';
+import BTLec04 from './src/Lec04/RN03_BaiTap_Zalo_VuMinhThu';
 
 const App = () => {
-  return <BTLec06 />;
+  return <BTLec04 />;
 };
 
 export default App;
