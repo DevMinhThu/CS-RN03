@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, FlatList, Image, SafeAreaView} from 'react-native';
+import {FlatList, SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Persons from 'react-native-vector-icons/Ionicons';
 import ItemHorizontal from './components/ItemHorizontal';
@@ -95,6 +95,19 @@ export class BTLec04 extends Component {
             showsHorizontalScrollIndicator={false}
           />
         </View>
+        <View>
+          <View style={styles.viewTitle}>
+            <Persons name="ios-people" size={18} color="black" />
+            <Text style={styles.titleHorizontal}>
+              Suggestions for making friends
+            </Text>
+          </View>
+        </View>
+        <FlatList
+          data={this.dataVertical}
+          renderItem={this.renderItemVertical}
+          showsVerticalScrollIndicator={false}
+        />
       </SafeAreaView>
     );
   }
