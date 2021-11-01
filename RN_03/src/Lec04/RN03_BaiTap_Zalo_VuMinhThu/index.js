@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, FlatList, Image} from 'react-native';
+import {Text, View, StyleSheet, FlatList, Image, SafeAreaView} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {
   blackwidow,
@@ -45,7 +45,7 @@ export class BTLec04 extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <View style={styles.viewHorizontal}>
           <View style={styles.viewTitle}>
             <Icon name="history" size={24} color="black" />
@@ -57,7 +57,7 @@ export class BTLec04 extends Component {
             horizontal={true}
           />
         </View>
-      </View>
+      </SafeAreaView>
     );
   }
 }
