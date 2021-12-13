@@ -12,10 +12,14 @@ import React from 'react';
 // import DemoScrollView from './src/Lec04/DemoScrollView';
 // import DemoFlatList from './src/Lec04/DemoFlatList';
 // import DemoSectionList from './src/Lec04/DemoSectionList';
-import BTLec04 from './src/Lec04/RN03_BaiTap_Zalo_VuMinhThu';
+// import BTLec04 from './src/Lec04/RN03_BaiTap_Zalo_VuMinhThu';
+// import DemoCallAPI from './src/Buoi8/DemoCallAPI/index';
+// import DemoLifecycle from './src/Buoi8/DemoLifecycle/index';
+// import DemoAxios from './src/Buoi9/DemoAxios';
+import ListProductScreen from './src/Buoi9/ListProductScreen';
 
 const App = () => {
-  return <BTLec04 />;
+  return <ListProductScreen />;
 };
 
 export default App;
