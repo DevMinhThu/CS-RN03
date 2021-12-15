@@ -12,6 +12,7 @@ target 'RN_03' do
     :hermes_enabled => false
   )
 
+  pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
