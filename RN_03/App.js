@@ -19,13 +19,14 @@ import {Provider} from 'react-redux';
 // import DemoAxios from './src/Buoi9/DemoAxios';
 import rootStore from './src/Buoi7/redux/store';
 import RockPaperScissorRedux from './src/Buoi7/RockPaperScissorRedux';
-import ListProductScreen from './src/Buoi9/ListProductScreen';
+// import ListProductScreen from './src/Buoi9/ListProductScreen';
+// import OnboardScreen from './src/Buoi10/OnboardScreen/index';
+import RootScreen from './src/Buoi10';
 
 const App = () => {
   return (
     <Provider store={rootStore}>
-      <RockPaperScissorRedux />
-      {/* <ListProductScreen /> */}
+      <RootScreen />
     </Provider>
   );
 };
