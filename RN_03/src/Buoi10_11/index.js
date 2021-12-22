@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import LoginScreen from './LoginScreen';
+import LoginScreen from './LoginScreen/ValidateWithFormik';
 import OnboardScreen from './OnboardScreen';
 
 export default class RootScreen extends Component {

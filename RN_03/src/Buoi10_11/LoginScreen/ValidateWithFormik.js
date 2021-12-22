@@ -1,20 +1,22 @@
+import {Formik} from 'formik';
 import React, {Component} from 'react';
 import {SafeAreaView, StatusBar, StyleSheet, View} from 'react-native';
 import {ButtonIcon, Text, TextInput} from '../components';
 import {fontIcon} from '../components/ButtonIcon';
+import * as Yup from 'yup';
+
+const validateSchema = Yup.object().shape({
+  email: Yup.string()
+    .email('Email Không Hợp lệ')
+    .required('Trường thông tin này bắt buộc nhập'),
+  password: Yup.string()
+    .min(5, 'Nhập tối thiểu 5 chữ số')
+    .required('Trường thông tin này bắt buộc nhập'),
+});
 
 export default class LoginScreen extends Component {
-  state = {
-    focusInput: false,
-    email: '',
-    emailError: '',
-    password: '',
-    passwordError: '',
-  };
-
-  onChangeText = (text, type) => {
-    console.log('type', type);
-    this.setState({[type]: text});
+  onSubmit = values => {
+    console.log(values);
   };
 
   render() {
@@ -30,37 +32,54 @@ export default class LoginScreen extends Component {
               onPress={this.props.navigateToOnboardScreen}
             />
           </View>
-          <View style={styles.formContainer}>
-            <View style={styles.formHeader}>
-              <Text header>Login</Text>
-              <Text>Glad to see you back!</Text>
-            </View>
-            <View>
-              <TextInput
-                placeholder={'Email'}
-                onChangeText={text => this.onChangeText(text, 'email')}
-                value={this.state.email}
-                errorText={this.state.emailError}
-                onBlur={this.onBlur}
-              />
-              <TextInput
-                placeholder={'Password'}
-                onChangeText={text => this.onChangeText(text, 'password')}
-                value={this.state.password}
-                errorText={this.state.passwordError}
-                onBlur={this.onBlur}
-              />
-            </View>
-            <View style={styles.formFooter}>
-              <Text>Forgot Password?</Text>
-              <ButtonIcon
-                name="arrowright"
-                size={25}
-                style={styles.loginBtn}
-                onPress={this.onSubmit}
-              />
-            </View>
-          </View>
+
+          <Formik
+            validationSchema={validateSchema}
+            initialValues={{email: 'email@gmail.com', password: ''}}
+            onSubmit={this.onSubmit}>
+            {({
+              values,
+              errors,
+              touched,
+              handleChange,
+              handleBlur,
+              handleSubmit,
+            }) => (
+              <View style={styles.formContainer}>
+                <View style={styles.formHeader}>
+                  <Text header>Login With Formik</Text>
+                  <Text>Glad to see you back!</Text>
+                </View>
+                <View>
+                  <TextInput
+                    placeholder={'Email'}
+                    onChangeText={handleChange('email')}
+                    value={values.email}
+                    touched={touched.email}
+                    onBlur={handleBlur('email')}
+                    errorText={errors.email}
+                  />
+                  <TextInput
+                    placeholder={'Password'}
+                    onChangeText={handleChange('password')}
+                    value={values.password}
+                    touched={touched.password}
+                    errorText={errors.password}
+                    onBlur={handleBlur('password')}
+                  />
+                </View>
+                <View style={styles.formFooter}>
+                  <Text>Forgot Password?</Text>
+                  <ButtonIcon
+                    name="arrowright"
+                    size={25}
+                    style={styles.loginBtn}
+                    onPress={handleSubmit}
+                  />
+                </View>
+              </View>
+            )}
+          </Formik>
 
           <View style={styles.buttonContainer}>
             <Text>or login with</Text>

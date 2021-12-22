@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import {Text, StyleSheet} from 'react-native';
 
-export class AppText extends Component {
+export default class AppText extends Component {
   render() {
     const {children, style, header} = this.props;
     return (
@@ -22,5 +22,3 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
 });
-
-export default AppText;

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, SafeAreaView, StatusBar} from 'react-native';
-import {Text, Button} from '../components';
+import {Button, Text} from '../components';
 
 export default class OnboardScreen extends Component {
   render() {
@@ -41,9 +41,11 @@ const styles = StyleSheet.create({
   },
   bannerContainer: {
     flex: 2,
+    // backgroundColor: '#bfb',
   },
   infoContainer: {
     flex: 1,
+    // backgroundColor: '#bff',
     justifyContent: 'center',
     paddingHorizontal: 30,
   },
@@ -54,6 +56,7 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flex: 1,
     paddingHorizontal: 30,
+    // backgroundColor: '#fbf',
     justifyContent: 'center',
   },
   signupBtn: {

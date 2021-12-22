@@ -21,7 +21,7 @@ import rootStore from './src/Buoi7/redux/store';
 import RockPaperScissorRedux from './src/Buoi7/RockPaperScissorRedux';
 // import ListProductScreen from './src/Buoi9/ListProductScreen';
 // import OnboardScreen from './src/Buoi10/OnboardScreen/index';
-import RootScreen from './src/Buoi10';
+import RootScreen from './src/Buoi10_11';
 
 const App = () => {
   return (
